@@ -9,7 +9,7 @@ export const StyledTypography = styled.div<{
     `
         font-size: 40px;
     font-weight: bold;
-    color: #9A9ACB;
+    color: #fff;
     `}
 
   ${(props) =>
