@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Section1 = styled.div`
   height: 600px;
-  background-color: #16161d;
+  // background-color: #16161d;
+  background-color: #fff;
   padding: 50px;
   display: flex;
   justify-content: space-around;
@@ -14,6 +15,10 @@ export const Text = styled.div`
   flex-direction: column;
 `;
 export const Photo = styled.div``;
+
+export const EmailContainer = styled.div``;
+
+export const CopyButton = styled.button``;
 
 export const Section2 = styled.div`
   height: 600px;

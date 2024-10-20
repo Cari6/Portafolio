@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
   justify-content: flex-end;
   padding: 0px 20px 0px 35px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 620px) {
     justify-content: flex-start;
   }
 `;
@@ -25,14 +25,14 @@ export const MenuIcon = styled.button`
     background-color: #2a2a38;
     transition: 0.3s;
   }
-  @media (min-width: 601px) {
+  @media (min-width: 621px) {
     display: none;
   }
 `;
 export const Nav = styled.nav`
   display: flex;
 
-  @media (max-width: 600px) {
+  @media (max-width: 620px) {
     display: none;
   }
 `;
