@@ -13,6 +13,14 @@ export const StyledTypography = styled.div<{
     `}
 
   ${(props) =>
+    props.$variant === "h2" &&
+    `
+        font-size: 30px;
+    font-weight: bold;
+    color: #9A9ACB;
+    `}
+
+  ${(props) =>
     props.$variant === "title1" &&
     `
         font-size: 24px;
@@ -31,8 +39,8 @@ export const StyledTypography = styled.div<{
      ${(props) =>
     props.$variant === "description" &&
     `
-        font-size: 14px;
+        font-size: 16px;
     font-weight: 400;
-    color: #9A9ACB;
+    color: #fff;
     `}
 `;

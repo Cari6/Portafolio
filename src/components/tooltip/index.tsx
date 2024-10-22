@@ -1,11 +1,12 @@
-import React from "react";
+import { TooltipContainer } from "./styles";
 
-const TooltipComponent = () => {
-  return (
-    <>
-      <button>imagen</button>
-    </>
-  );
+export interface TooltipProps {
+  text: string;
+  $visible?: boolean;
+}
+
+const Tooltip = ({ text, $visible = false }: TooltipProps) => {
+  return <TooltipContainer $visible={$visible}>{text}</TooltipContainer>;
 };
 
-export default TooltipComponent;
+export default Tooltip;
