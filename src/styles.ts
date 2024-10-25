@@ -68,29 +68,48 @@ export const CopiedText = styled.span`
 
 export const Section2 = styled.div`
   height: 100%;
+  min-height: 600px;
   background-color: #2a2a38;
   display: flex;
   align-items: center;
+  flex-direction: column;
   padding: 40px;
-  gap: 20px;
+  gap: 40px;
+`;
 
+export const AboutMeText = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
   @media (max-width: 880px) {
     flex-direction: column;
   }
 `;
 
-export const AboutMeText = styled.div`
+export const Section3 = styled.div`
+  min-height: 600px;
+  padding: 40px;
+  gap: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
-  width: 100%;
 `;
 
-export const Section3 = styled.div`
-  height: 600px;
+export const SkillContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 `;
+
+export const SkillSection = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+`;
+
 export const Section4 = styled.div`
   height: 600px;
   background-color: #2a2a38;

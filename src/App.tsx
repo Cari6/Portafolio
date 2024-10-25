@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Layout, Tooltip, Typography } from "./components";
+import { Layout, Skills, Tooltip, Typography } from "./components";
 import {
   CopiedText,
   CopyButton,
@@ -13,7 +13,10 @@ import {
   Section5,
   HomeText,
   AboutMeText,
+  SkillContainer,
+  SkillSection,
 } from "./styles";
+import { LenguageSkills, OtherSkills, ToolSkills } from "./utils/skills";
 
 const App = () => {
   const [copied, setCopied] = useState(false);
@@ -65,9 +68,15 @@ const App = () => {
       </Section1>
 
       <Section2 id="section2">
+        <Typography variant="h2">Sobre Mí</Typography>
         <AboutMeText>
-          <Typography variant="h2">Sobre Mí</Typography>
-          <Typography variant="description" style={{ lineHeight: 1.8 }}>
+          <Typography
+            variant="description"
+            style={{
+              lineHeight: 1.8,
+              width: "100%",
+            }}
+          >
             Después de años trabajando en el área de salud, ventas y atención al
             público, descubrí mi pasión por la programación.
             <br />
@@ -84,10 +93,34 @@ const App = () => {
             También me gustan los gatos, los libros y la música de BTS 💜.
             <p></p>
           </Typography>
+          <div
+            style={{ backgroundColor: "blue", width: 200, height: 200 }}
+          ></div>
         </AboutMeText>
-        <div style={{ backgroundColor: "blue", width: 300, height: 300 }}></div>
       </Section2>
-      <Section3 id="section3">conocimientos</Section3>
+      <Section3 id="section3">
+        <Typography variant="h2">Conocimientos</Typography>
+
+        <SkillContainer>
+          <SkillSection>
+            {LenguageSkills.map((item, index) => (
+              <Skills key={index} {...item} />
+            ))}
+          </SkillSection>
+
+          <SkillSection>
+            {ToolSkills.map((item, index) => (
+              <Skills $variant="alternative" key={index} {...item} />
+            ))}
+          </SkillSection>
+
+          <SkillSection>
+            {OtherSkills.map((item, index) => (
+              <Skills key={index} {...item} />
+            ))}
+          </SkillSection>
+        </SkillContainer>
+      </Section3>
       <Section4 id="section4">proyecto</Section4>
       <Section5 id="section5">contacto</Section5>
     </Layout>
