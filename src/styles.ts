@@ -17,6 +17,7 @@ export const Section1 = styled.div`
 export const HomeText = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 export const Photo = styled.div`
   width: 200px;
@@ -111,8 +112,23 @@ export const SkillSection = styled.div`
 `;
 
 export const Section4 = styled.div`
-  height: 600px;
+  min-height: 600px;
   background-color: #2a2a38;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  gap: 20px;
+`;
+
+export const ProjectsContainer = styled.div`
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
 `;
 export const Section5 = styled.div`
   height: 600px;

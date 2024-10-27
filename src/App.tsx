@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Layout, Skills, Tooltip, Typography } from "./components";
+import {
+  Layout,
+  Modal,
+  PreviewProject,
+  Skills,
+  Tooltip,
+  Typography,
+} from "./components";
 import {
   CopiedText,
   CopyButton,
@@ -15,13 +22,17 @@ import {
   AboutMeText,
   SkillContainer,
   SkillSection,
+  ProjectsContainer,
 } from "./styles";
 import { LenguageSkills, OtherSkills, ToolSkills } from "./utils/skills";
+import useTooltip from "./hooks/useTooltip";
+import useModal from "./hooks/useModal";
 
 const App = () => {
   const [copied, setCopied] = useState(false);
   const [copiedText, setCopiedText] = useState("");
-  const [isTooltipVisible, setTooltipVisible] = useState(false);
+  const { isTooltipVisible, showTooltip, hideTooltip } = useTooltip();
+  const { isOpen, openModal, closeModal } = useModal();
 
   const email = "carolinasandovalg6@gmail.com";
 
@@ -33,14 +44,6 @@ const App = () => {
       setCopiedText("");
       setCopied(false);
     }, 2000);
-  };
-
-  const showTooltip = () => {
-    setTooltipVisible(true);
-  };
-
-  const hideTooltip = () => {
-    setTooltipVisible(false);
   };
 
   return (
@@ -98,6 +101,7 @@ const App = () => {
           ></div>
         </AboutMeText>
       </Section2>
+
       <Section3 id="section3">
         <Typography variant="h2">Conocimientos</Typography>
 
@@ -121,7 +125,18 @@ const App = () => {
           </SkillSection>
         </SkillContainer>
       </Section3>
-      <Section4 id="section4">proyecto</Section4>
+
+      <Section4 id="section4">
+        <Typography variant="h2">Proyectos</Typography>
+        <ProjectsContainer>
+          <div onClick={openModal}>
+            <PreviewProject title="Bank Dash" image="/projects/home.jpeg" />
+          </div>
+
+          <Modal isOpen={isOpen} onClose={closeModal} />
+        </ProjectsContainer>
+      </Section4>
+
       <Section5 id="section5">contacto</Section5>
     </Layout>
   );

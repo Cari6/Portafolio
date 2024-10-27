@@ -1,13 +1,8 @@
 import styled from "styled-components";
 import { SkillsProps } from ".";
 
-interface SkillsContainerProps {
-  $variant: "default" | "alternative";
-}
-
-export const SkillsContainer = styled.div<SkillsContainerProps>`
-  background-color: ${({ $variant }) =>
-    $variant === "default" ? "#2a2a38" : "#CCB86C"};
+export const SkillsContainer = styled.div`
+  background-color: #2a2a38;
   display: flex;
   flex-direction: column;
   justify-content: center;

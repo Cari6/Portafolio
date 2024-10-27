@@ -9,11 +9,11 @@ export interface SkillsProps {
 
 const Skills = ({ text, icon, $variant = "default" }: SkillsProps) => {
   return (
-    <SkillsContainer $variant={$variant}>
+    <SkillsContainer>
       <Typography
         variant="title2"
         style={{
-          color: $variant === "default" ? "#fff" : "#000",
+          color: $variant === "default" ? "#fff" : "#CCB86C",
           textAlign: "center",
         }}
       >

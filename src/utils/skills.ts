@@ -8,7 +8,6 @@ export const LenguageSkills = [
 ];
 
 export const ToolSkills = [
-  { text: "Redux", icon: "/skills/redux.png" },
   { text: "YUP", icon: "/skills/yup.jpg" },
   { text: "Styled-Components", icon: "/skills/styled-components.png" },
   { text: "TailwindCSS", icon: "/skills/tailwindcss.png" },
