@@ -2,17 +2,14 @@ import Tooltip from "../tooltip";
 import Typography from "../typography";
 import { Container, Title, Image } from "./styles";
 import useTooltip from "../../hooks/useTooltip";
-import useModal from "../../hooks/useModal";
-import Modal from "../modal";
 
-interface ProjectPreviewProps {
+interface ProjectProps {
   image: string;
   title: string;
 }
 
-const ProjectPreview = ({ image, title }: ProjectPreviewProps) => {
+const Project = ({ image, title }: ProjectProps) => {
   const { isTooltipVisible, showTooltip, hideTooltip } = useTooltip();
-  const { isOpen, openModal, closeModal } = useModal();
 
   return (
     <Container onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
@@ -34,4 +31,4 @@ const ProjectPreview = ({ image, title }: ProjectPreviewProps) => {
   );
 };
 
-export default ProjectPreview;
+export default Project;

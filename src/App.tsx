@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   Layout,
   Modal,
-  PreviewProject,
+  Project,
   Skills,
   Tooltip,
   Typography,
@@ -26,13 +26,11 @@ import {
 } from "./styles";
 import { LenguageSkills, OtherSkills, ToolSkills } from "./utils/skills";
 import useTooltip from "./hooks/useTooltip";
-import useModal from "./hooks/useModal";
 
 const App = () => {
   const [copied, setCopied] = useState(false);
   const [copiedText, setCopiedText] = useState("");
   const { isTooltipVisible, showTooltip, hideTooltip } = useTooltip();
-  const { isOpen, openModal, closeModal } = useModal();
 
   const email = "carolinasandovalg6@gmail.com";
 
@@ -129,11 +127,11 @@ const App = () => {
       <Section4 id="section4">
         <Typography variant="h2">Proyectos</Typography>
         <ProjectsContainer>
-          <div onClick={openModal}>
-            <PreviewProject title="Bank Dash" image="/projects/home.jpeg" />
+          <div>
+            <Project title="Bank Dash" image="/projects/home.jpeg" />
           </div>
 
-          <Modal isOpen={isOpen} onClose={closeModal} />
+          <Modal />
         </ProjectsContainer>
       </Section4>
 
