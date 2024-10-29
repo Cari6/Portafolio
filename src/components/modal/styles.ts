@@ -27,6 +27,41 @@ export const Container = styled.div`
   @media (max-width: 1000px) {
     flex-direction: column;
   }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #b1b1b1;
+    border-radius: 0 9px 9px 0;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #9c9c9c;
+  }
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  &:hover {
+    background-color: #e3e3e3;
+    transition: 0.3s;
+  }
 `;
 
 export const CarouselContainer = styled.div`
@@ -34,11 +69,10 @@ export const CarouselContainer = styled.div`
   flex: 2;
   position: relative;
   width: 100%;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 50px;
+  padding: 20px 50px;
 `;
 
 export const CarouselImage = styled.img`
@@ -71,6 +105,11 @@ export const CarouselButton = styled.button`
     background-color: #e3e3e3;
     transition: 0.3s;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: none;
+  }
 `;
 
 export const ProjectInfo = styled.div`
@@ -80,12 +119,12 @@ export const ProjectInfo = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export const LenguageIconContainer = styled.div`
+export const LanguageIconContainer = styled.div`
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 `;
-export const LenguageIcon = styled.div`
+export const LanguageIcon = styled.div`
   border-radius: 50%;
   width: 45px;
   height: 45px;

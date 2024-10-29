@@ -74,7 +74,7 @@ export const Section2 = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 40px;
+  padding: 60px;
   gap: 40px;
 `;
 
@@ -117,7 +117,7 @@ export const Section4 = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 40px;
+  padding: 60px;
   gap: 20px;
 `;
 
@@ -131,5 +131,36 @@ export const ProjectsContainer = styled.div`
   flex-wrap: wrap;
 `;
 export const Section5 = styled.div`
-  height: 600px;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px;
+  gap: 20px;
+`;
+
+export const ContactContainer = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+`;
+
+export const LinkIcon = styled.a`
+  position: relative;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+
+  &:hover {
+    background-color: #bdbdbd;
+    transition: 0.3s;
+  }
 `;

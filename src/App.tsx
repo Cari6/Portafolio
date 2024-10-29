@@ -23,13 +23,24 @@ import {
   SkillContainer,
   SkillSection,
   ProjectsContainer,
+  ContactContainer,
+  LinkIcon,
 } from "./styles";
 import { LenguageSkills, OtherSkills, ToolSkills } from "./utils/skills";
 import useTooltip from "./hooks/useTooltip";
+import { projectsData } from "./utils/projects";
 
 const App = () => {
   const [copied, setCopied] = useState(false);
   const [copiedText, setCopiedText] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<{
+    images: string[];
+    title: string;
+    description: string;
+    languageIcons: string[];
+    links?: { url: string; icon: string }[];
+  } | null>(null);
   const { isTooltipVisible, showTooltip, hideTooltip } = useTooltip();
 
   const email = "carolinasandovalg6@gmail.com";
@@ -44,6 +55,28 @@ const App = () => {
     }, 2000);
   };
 
+  const handleCopyClick = () => {
+    copyToClipBoard();
+  };
+
+  const handleMouseEnter = () => {
+    showTooltip("copy-button");
+  };
+
+  const handleMouseLeave = () => {
+    hideTooltip("copy-button");
+  };
+
+  const openModal = (project: typeof selectedProject) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
   return (
     <Layout>
       <Section1 id="section1">
@@ -56,13 +89,16 @@ const App = () => {
           <EmailContainer>
             <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
             <CopyButton
-              onClick={copyToClipBoard}
-              onMouseEnter={showTooltip}
-              onMouseLeave={hideTooltip}
+              onClick={handleCopyClick}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <img src="/copy-icon.svg" alt="" />
               <CopiedText>{copiedText}</CopiedText>
-              <Tooltip text="Copiar" $visible={isTooltipVisible} />
+              <Tooltip
+                text="Copiar"
+                $visible={isTooltipVisible["copy-button"]}
+              />
             </CopyButton>
           </EmailContainer>
         </HomeText>
@@ -127,15 +163,75 @@ const App = () => {
       <Section4 id="section4">
         <Typography variant="h2">Proyectos</Typography>
         <ProjectsContainer>
-          <div>
-            <Project title="Bank Dash" image="/projects/home.jpeg" />
-          </div>
-
-          <Modal />
+          {projectsData.map((project, index) => (
+            <div key={index} onClick={() => openModal(project)}>
+              <Project title={project.title} image={project.images[0]} />
+            </div>
+          ))}
+          {isModalOpen && selectedProject && (
+            <Modal
+              isOpen={isModalOpen}
+              onClose={closeModal}
+              project={selectedProject}
+            />
+          )}
         </ProjectsContainer>
       </Section4>
 
-      <Section5 id="section5">contacto</Section5>
+      <Section5 id="section5">
+        <Typography variant="h2">Contacto</Typography>
+        <ContactContainer>
+          <EmailContainer>
+            <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
+            <CopyButton
+              onClick={handleCopyClick}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <img src="/copy-icon.svg" alt="" />
+              <CopiedText>{copiedText}</CopiedText>
+              <Tooltip
+                text="Copiar"
+                $visible={isTooltipVisible["copy-button"]}
+              />
+            </CopyButton>
+          </EmailContainer>
+          <div style={{ display: "flex", gap: "20px" }}>
+            {[
+              {
+                href: "https://www.linkedin.com/in/carolina-sandoval-678656333/",
+                src: "/skills/linkedin.png",
+                alt: "LinkedIn",
+                id: "linkedin",
+              },
+              {
+                href: "https://github.com/Cari6",
+                src: "/skills/github.png",
+                alt: "GitHub",
+                id: "github",
+              },
+              {
+                href: "https://github.com/Cari6/Curriculum-Vitae",
+                src: "/doc.svg",
+                alt: "CV",
+                id: "cv",
+              },
+            ].map(({ href, src, alt, id }) => (
+              <div key={id} style={{ position: "relative" }}>
+                <LinkIcon
+                  href={href}
+                  target="_blank"
+                  onMouseEnter={() => showTooltip(id)}
+                  onMouseLeave={() => hideTooltip(id)}
+                >
+                  <img src={src} alt={alt} width={25} height={25} />
+                </LinkIcon>
+                <Tooltip text={`Ir a ${alt}`} $visible={isTooltipVisible[id]} />
+              </div>
+            ))}
+          </div>
+        </ContactContainer>
+      </Section5>
     </Layout>
   );
 };

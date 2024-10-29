@@ -11,8 +11,13 @@ interface ProjectProps {
 const Project = ({ image, title }: ProjectProps) => {
   const { isTooltipVisible, showTooltip, hideTooltip } = useTooltip();
 
+  const tooltipId = "project-tooltip";
+
+  const handleMouseEnter = () => showTooltip(tooltipId);
+
+  const handleMouseLeave = () => hideTooltip(tooltipId);
   return (
-    <Container onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
+    <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Image>
         <img src={image} width={300} height={180} alt="" />
       </Image>
@@ -23,7 +28,7 @@ const Project = ({ image, title }: ProjectProps) => {
       </Title>
       <Tooltip
         text="Ver más"
-        $visible={isTooltipVisible}
+        $visible={isTooltipVisible[tooltipId]}
         $backgroundColor="#16161d"
         $bottom="-20%"
       />
