@@ -34,18 +34,16 @@ export const CarouselContainer = styled.div`
   flex: 2;
   position: relative;
   width: 100%;
-  height: 300px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 50px;
 `;
 
 export const CarouselImage = styled.img`
   width: 100%;
   height: auto;
-  max-height: 100%;
-  object-fit: cover;
 `;
 
 export const CarouselControls = styled.div`
@@ -55,20 +53,25 @@ export const CarouselControls = styled.div`
   justify-content: space-between;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0 10px;
-
-  button {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-  }
+  padding: 0 8px;
 `;
 
-export const CarouselButton = styled.div``;
+export const CarouselButton = styled.button`
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #e3e3e3;
+    transition: 0.3s;
+  }
+`;
 
 export const ProjectInfo = styled.div`
   flex: 1;
@@ -93,7 +96,6 @@ export const LenguageIcon = styled.div`
 `;
 
 export const LinkIcon = styled.a`
-  // border: none;
   border-radius: 50%;
   width: 45px;
   height: 45px;
@@ -105,5 +107,6 @@ export const LinkIcon = styled.a`
 
   &:hover {
     background-color: #e3e3e3;
+    transition: 0.3s;
   }
 `;

@@ -50,8 +50,15 @@ const Modal = () => {
             alt={`Slide ${currentIndex + 1}`}
           />
           <CarouselControls>
-            <button onClick={handlePrev}>prev</button>
-            <button onClick={handleNext}>next</button>
+            <CarouselButton onClick={handlePrev} disabled={currentIndex === 0}>
+              <img src="/arrow-back.svg" alt="" />
+            </CarouselButton>
+            <CarouselButton
+              onClick={handleNext}
+              disabled={currentIndex === images.length - 1}
+            >
+              <img src="/arrow-next.svg" alt="" />
+            </CarouselButton>
           </CarouselControls>
         </CarouselContainer>
 
@@ -72,13 +79,20 @@ const Modal = () => {
             sed provident quam vel quasi nobis suscipit explicabo! Accusantium,
             magnam. Sapiente, culpa? Atque.
           </Typography>
-
-          <LinkIcon
-            href="https://github.com/Cari6/Bank-Dash-Project"
-            target="_blank"
-          >
-            <img src="/skills/github.png" alt="" width={25} height={25} />
-          </LinkIcon>
+          <div style={{ display: "flex", gap: 20 }}>
+            <LinkIcon
+              href="https://github.com/Cari6/Bank-Dash-Project"
+              target="_blank"
+            >
+              <img src="/skills/github.png" alt="" width={25} height={25} />
+            </LinkIcon>
+            <LinkIcon
+              href="https://bank-dash-project.netlify.app/"
+              target="_blank"
+            >
+              <img src="/navigate.svg" alt="" width={25} height={25} />
+            </LinkIcon>
+          </div>
         </ProjectInfo>
       </Container>
     </ModalOverlay>
