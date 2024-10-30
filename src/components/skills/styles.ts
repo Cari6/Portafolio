@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { SkillsProps } from ".";
 
 export const SkillsContainer = styled.div`
   background-color: #2a2a38;

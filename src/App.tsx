@@ -99,7 +99,7 @@ const App = () => {
               onMouseLeave={() => hideTooltip("copy-button")}
             >
               <img src="/copy-icon.svg" alt="" />
-              <CopiedText>{copiedText}</CopiedText>
+              <CopiedText>{copied && copiedText}</CopiedText>
               <Tooltip
                 text="Copiar"
                 $visible={isTooltipVisible["copy-button"]}

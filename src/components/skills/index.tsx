@@ -1,7 +1,7 @@
 import Typography from "../typography";
 import { Icon, SkillsContainer } from "./styles";
 
-export interface SkillsProps {
+interface SkillsProps {
   text: string;
   icon: string;
   $variant?: "default" | "alternative";
