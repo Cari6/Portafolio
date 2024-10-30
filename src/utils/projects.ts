@@ -31,7 +31,7 @@ export const projectsData = [
     title: "Portafolio",
     description:
       "Página web realizada con ReactJs con TypeScript y Styled-components",
-    images: ["/projects/transactions.jpeg"],
+    images: ["/projects/inicio.png"],
     languageIcons: [
       "/skills/html.png",
       "/skills/css.png",

@@ -1,17 +1,19 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
+
+interface TooltipVisibility {
+  [key: string]: boolean;
+}
 
 const useTooltip = () => {
-  const [isTooltipVisible, setTooltipVisible] = useState<{
-    [key: string]: boolean;
-  }>({});
+  const [isTooltipVisible, setTooltipVisible] = useState<TooltipVisibility>({});
 
-  const showTooltip = useCallback((id: string) => {
+  const showTooltip = (id: string) => {
     setTooltipVisible((prev) => ({ ...prev, [id]: true }));
-  }, []);
+  };
 
-  const hideTooltip = useCallback((id: string) => {
+  const hideTooltip = (id: string) => {
     setTooltipVisible((prev) => ({ ...prev, [id]: false }));
-  }, []);
+  };
 
   return { isTooltipVisible, showTooltip, hideTooltip };
 };

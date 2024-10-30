@@ -18,6 +18,11 @@ export const HomeText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 403px;
+
+  @media (max-width: 450px) {
+    width: 100%;
+  }
 `;
 export const Photo = styled.div`
   width: 200px;
@@ -36,12 +41,17 @@ export const EmailContainer = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 20px;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const EmailLink = styled.a`
   text-decoration: none;
   background-color: #2a2a38;
-  padding: 15px;
+  padding: 15px 5px;
   border-radius: 9px;
   color: #fff;
   width: 100%;
@@ -147,6 +157,10 @@ export const ContactContainer = styled.div`
   align-items: center;
   width: 100%;
   gap: 40px;
+
+  @media (max-width: 450px) {
+    width: 100%;
+  }
 `;
 
 export const LinkIcon = styled.a`

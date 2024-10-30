@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Layout,
   Modal,
@@ -59,14 +59,6 @@ const App = () => {
     copyToClipBoard();
   };
 
-  const handleMouseEnter = () => {
-    showTooltip("copy-button");
-  };
-
-  const handleMouseLeave = () => {
-    hideTooltip("copy-button");
-  };
-
   const openModal = (project: typeof selectedProject) => {
     setSelectedProject(project);
     setIsModalOpen(true);
@@ -77,21 +69,34 @@ const App = () => {
     setSelectedProject(null);
   };
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => document.body.classList.remove("no-scroll");
+  }, [isModalOpen]);
+
   return (
     <Layout>
       <Section1 id="section1">
         <Photo>
-          <img src="perfil.jpeg" alt="" />
+          <img src="perfil222.png" alt="" />
         </Photo>
         <HomeText>
-          <Typography variant="h1">Carolina Sandoval</Typography>
-          <Typography variant="title1">Frontend Web Developer </Typography>
+          <Typography variant="h1" style={{ textAlign: "center" }}>
+            Carolina Sandoval
+          </Typography>
+          <Typography variant="title1" style={{ textAlign: "center" }}>
+            Frontend Web Developer{" "}
+          </Typography>
           <EmailContainer>
             <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
             <CopyButton
               onClick={handleCopyClick}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              onMouseEnter={() => showTooltip("copy-button")}
+              onMouseLeave={() => hideTooltip("copy-button")}
             >
               <img src="/copy-icon.svg" alt="" />
               <CopiedText>{copiedText}</CopiedText>
@@ -111,7 +116,7 @@ const App = () => {
             variant="description"
             style={{
               lineHeight: 1.8,
-              width: "100%",
+              maxWidth: "1000px",
             }}
           >
             Después de años trabajando en el área de salud, ventas y atención al
@@ -127,12 +132,11 @@ const App = () => {
             Estoy ansiosa de unirme a un equipo de desarrollo donde pueda seguir
             aprendiendo, contribuir con soluciones técnicas mientras crezco como
             desarrolladora y ganar experiencia haciendo lo que me gusta. <br />
-            También me gustan los gatos, los libros y la música de BTS 💜.
-            <p></p>
+            {/* También me gustan los gatos, los libros y la música de BTS 💜. */}
           </Typography>
-          <div
+          {/* <div
             style={{ backgroundColor: "blue", width: 200, height: 200 }}
-          ></div>
+          ></div> */}
         </AboutMeText>
       </Section2>
 
@@ -185,8 +189,8 @@ const App = () => {
             <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
             <CopyButton
               onClick={handleCopyClick}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              onMouseEnter={() => showTooltip("copy-button")}
+              onMouseLeave={() => hideTooltip("copy-button")}
             >
               <img src="/copy-icon.svg" alt="" />
               <CopiedText>{copiedText}</CopiedText>

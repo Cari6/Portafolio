@@ -11,3 +11,24 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #16161d;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9a9acb;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #7878a5;
+}
