@@ -12,6 +12,10 @@ export const ModalOverlay = styled.div`
   justify-content: center;
   padding: 40px;
   cursor: pointer;
+
+  @media (max-width: 1000px) {
+    padding: 20px;
+  }
 `;
 
 export const Container = styled.div`

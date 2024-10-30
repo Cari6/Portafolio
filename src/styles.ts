@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section1 = styled.div`
-  height: 600px;
+  height: 640px;
   background-color: #16161d;
   padding: 50px;
   display: flex;
@@ -27,7 +27,6 @@ export const HomeText = styled.div`
 export const Photo = styled.div`
   width: 200px;
   height: 200px;
-  overflow: hidden;
 
   img {
     width: 100%;
@@ -79,7 +78,7 @@ export const CopiedText = styled.span`
 
 export const Section2 = styled.div`
   height: 100%;
-  min-height: 600px;
+  min-height: 640px;
   background-color: #2a2a38;
   display: flex;
   align-items: center;
@@ -100,7 +99,7 @@ export const AboutMeText = styled.div`
 `;
 
 export const Section3 = styled.div`
-  min-height: 600px;
+  min-height: 640px;
   padding: 40px;
   gap: 40px;
   display: flex;
@@ -122,7 +121,7 @@ export const SkillSection = styled.div`
 `;
 
 export const Section4 = styled.div`
-  min-height: 600px;
+  min-height: 640px;
   background-color: #2a2a38;
   display: flex;
   align-items: center;
@@ -141,7 +140,7 @@ export const ProjectsContainer = styled.div`
   flex-wrap: wrap;
 `;
 export const Section5 = styled.div`
-  min-height: 600px;
+  min-height: 640px;
   display: flex;
   align-items: center;
   flex-direction: column;

@@ -37,11 +37,11 @@ export const Nav = styled.nav`
   }
 `;
 
-export const Item = styled.a`
-  text-decoration: none;
+export const Item = styled.div`
   color: #9a9acb;
   font-weight: 500;
   padding: 15px;
+  cursor: pointer;
 
   &:hover {
     background-color: #2a2a38;
@@ -79,11 +79,11 @@ export const SidebarNav = styled.nav`
   bottom: 0;
   z-index: 1000;
 `;
-export const SidebarItem = styled.a`
-  text-decoration: none;
+export const SidebarItem = styled.div`
   color: #9a9acb;
   font-weight: 500;
   padding: 15px;
+  cursor: pointer;
 
   &:hover {
     background-color: #2a2a38;

@@ -3,7 +3,7 @@ export const projectsData = [
     id: 1,
     title: "Bank Dash",
     description:
-      "Proyecto FrontEnd de simulación de Administrador de Gastos, realizado con NextJs con TypeScript, React-hook-forms, Yup, Context, Styled-components y React-google-chart. Tiene funcionalidades como agregar y eliminar tarjetas bancarias, y agregar y modificar perfil de usuario",
+      "Proyecto FrontEnd de simulación de Administrador de Gastos, realizado con NextJs, TypeScript, React-hook-forms, Yup, Context, Styled-components y React-google-chart. Tiene funcionalidades como agregar y eliminar tarjetas bancarias, y agregar y modificar perfil de usuario",
     images: [
       "/projects/home.jpeg",
       "/projects/transactions.jpeg",
@@ -30,7 +30,7 @@ export const projectsData = [
     id: 2,
     title: "Portafolio",
     description:
-      "Página web realizada con ReactJs con TypeScript y Styled-components",
+      "Página web realizada con ReactJs, TypeScript y Styled-components",
     images: ["/projects/inicio.png"],
     languageIcons: [
       "/skills/html.png",

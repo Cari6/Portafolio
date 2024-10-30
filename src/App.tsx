@@ -41,6 +41,7 @@ const App = () => {
     languageIcons: string[];
     links?: { url: string; icon: string }[];
   } | null>(null);
+  const [isTooltipEnabled, setIsTooltipEnabled] = useState(true);
   const { isTooltipVisible, showTooltip, hideTooltip } = useTooltip();
 
   const email = "carolinasandovalg6@gmail.com";
@@ -78,6 +79,17 @@ const App = () => {
     return () => document.body.classList.remove("no-scroll");
   }, [isModalOpen]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTooltipEnabled(window.innerWidth >= 4540);
+    };
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  });
+
   return (
     <Layout>
       <Section1 id="section1">
@@ -95,8 +107,12 @@ const App = () => {
             <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
             <CopyButton
               onClick={handleCopyClick}
-              onMouseEnter={() => showTooltip("copy-button")}
-              onMouseLeave={() => hideTooltip("copy-button")}
+              onMouseEnter={() =>
+                isTooltipEnabled && showTooltip("copy-button")
+              }
+              onMouseLeave={() =>
+                isTooltipEnabled && hideTooltip("copy-button")
+              }
             >
               <img src="/copy-icon.svg" alt="" />
               <CopiedText>{copied && copiedText}</CopiedText>
@@ -132,11 +148,7 @@ const App = () => {
             Estoy ansiosa de unirme a un equipo de desarrollo donde pueda seguir
             aprendiendo, contribuir con soluciones técnicas mientras crezco como
             desarrolladora y ganar experiencia haciendo lo que me gusta. <br />
-            {/* También me gustan los gatos, los libros y la música de BTS 💜. */}
           </Typography>
-          {/* <div
-            style={{ backgroundColor: "blue", width: 200, height: 200 }}
-          ></div> */}
         </AboutMeText>
       </Section2>
 
@@ -189,8 +201,12 @@ const App = () => {
             <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
             <CopyButton
               onClick={handleCopyClick}
-              onMouseEnter={() => showTooltip("copy-button")}
-              onMouseLeave={() => hideTooltip("copy-button")}
+              onMouseEnter={() =>
+                isTooltipEnabled && showTooltip("copy-button")
+              }
+              onMouseLeave={() =>
+                isTooltipEnabled && hideTooltip("copy-button")
+              }
             >
               <img src="/copy-icon.svg" alt="" />
               <CopiedText>{copiedText}</CopiedText>
@@ -225,8 +241,8 @@ const App = () => {
                 <LinkIcon
                   href={href}
                   target="_blank"
-                  onMouseEnter={() => showTooltip(id)}
-                  onMouseLeave={() => hideTooltip(id)}
+                  onMouseEnter={() => isTooltipEnabled && showTooltip(id)}
+                  onMouseLeave={() => isTooltipEnabled && hideTooltip(id)}
                 >
                   <img src={src} alt={alt} width={25} height={25} />
                 </LinkIcon>
