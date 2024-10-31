@@ -11,6 +11,10 @@ export const HeaderContainer = styled.div`
   @media (max-width: 620px) {
     justify-content: flex-start;
   }
+
+  @media (max-width: 620px) {
+    height: 71px;
+  }
 `;
 
 export const MenuIcon = styled.button`
