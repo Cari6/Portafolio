@@ -36,11 +36,12 @@ export const projectsData = [
       "/skills/html.png",
       "/skills/css.png",
       "/logo192.png",
+      "/skills/typescript.png",
       "/skills/styled-components.png",
     ],
     links: [
       {
-        url: "https://github.com/Cari6/Bank-Dash-Project",
+        url: "https://github.com/Cari6/Portafolio",
         icon: "/skills/github.png",
       },
     ],

@@ -9,10 +9,7 @@ interface TooltipContainerProps {
 
 export const TooltipContainer = styled.div<TooltipContainerProps>`
   visibility: ${(props) => (props.$visible ? "visible" : "hidden")};
-  // display: ${({ $visible }) => ($visible ? "block" : "none")};
   background-color: ${(props) => props.$backgroundColor || "#2a2a38"};
-  // background-color: ${({ $backgroundColor }) =>
-    $backgroundColor || "2a2a38"};
   color: #fff;
   text-align: center;
   padding: 8px;

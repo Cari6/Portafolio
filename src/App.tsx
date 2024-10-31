@@ -81,7 +81,7 @@ const App = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsTooltipEnabled(window.innerWidth >= 4540);
+      setIsTooltipEnabled(window.innerWidth >= 450);
     };
     window.addEventListener("resize", handleResize);
 

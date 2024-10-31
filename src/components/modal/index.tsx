@@ -10,6 +10,7 @@ import {
   LanguageIcon,
   LanguageIconContainer,
   LinkIcon,
+  LinkIconContainer,
   ModalOverlay,
   ProjectInfo,
 } from "./styles";
@@ -90,13 +91,13 @@ const Modal = ({ isOpen, onClose, project }: ModalProps) => {
             {project.description}
           </Typography>
 
-          <div style={{ display: "flex", gap: 20 }}>
+          <LinkIconContainer>
             {project.links?.map((link, index) => (
               <LinkIcon key={index} href={link.url} target="_blank">
                 <img src={link.icon} alt="" width={25} height={25} />
               </LinkIcon>
             ))}
-          </div>
+          </LinkIconContainer>
         </ProjectInfo>
       </Container>
     </ModalOverlay>

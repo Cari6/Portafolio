@@ -138,6 +138,11 @@ export const LanguageIcon = styled.div`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
+export const LinkIconContainer = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
 export const LinkIcon = styled.a`
   border-radius: 50%;
   width: 45px;
