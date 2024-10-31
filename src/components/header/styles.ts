@@ -59,7 +59,7 @@ export const SidebarContainer = styled.div<{ $isOpen: boolean }>`
   top: 0;
   bottom: 0;
   left: ${(props) => (props.$isOpen ? "0" : "-250px")};
-  transition: left 0.5s ease-in-out;
+  transition: left 0.3s ease-in-out;
   z-index: 1002;
 `;
 export const Overlay = styled.div`
