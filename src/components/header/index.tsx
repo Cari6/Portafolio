@@ -46,7 +46,7 @@ const Header = () => {
     <>
       <HeaderContainer>
         <MenuIcon onClick={OpenSidebar}>
-          <img src="/menu-icon.svg" alt="" />
+          <img src="/menu-icon.svg" alt="" width={25} height={25} />
         </MenuIcon>
         <Nav>
           <Item onClick={() => scrollToSection("section1")}>Inicio</Item>

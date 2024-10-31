@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0px 20px 0px 35px;
+  padding: 0px 20px;
 
   @media (max-width: 620px) {
     justify-content: flex-start;
