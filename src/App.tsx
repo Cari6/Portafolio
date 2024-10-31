@@ -133,6 +133,7 @@ const App = () => {
             style={{
               lineHeight: 1.8,
               maxWidth: "1000px",
+              textAlign: "center",
             }}
           >
             Después de años trabajando en el área de salud, ventas y atención al
