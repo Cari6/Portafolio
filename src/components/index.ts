@@ -1,3 +1,8 @@
+export { default as HomeSection } from "./section1-home";
+export { default as AboutMeSection } from "./section2-about-me";
+export { default as SkillsSection } from "./section3-skills";
+export { default as ProjectsSection } from "./section4-projects";
+export { default as ContactSection } from "./section5-contact";
 export { default as Header } from "./header";
 export { default as Typography } from "./typography";
 export { default as Layout } from "./layout";

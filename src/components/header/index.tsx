@@ -9,6 +9,7 @@ import {
   SidebarItem,
   SidebarNav,
 } from "./styles";
+import { navItems } from "../../utils/constants/constants";
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -49,11 +50,11 @@ const Header = () => {
           <img src="/menu-icon.svg" alt="" width={25} height={25} />
         </MenuIcon>
         <Nav>
-          <Item onClick={() => scrollToSection("section1")}>Inicio</Item>
-          <Item onClick={() => scrollToSection("section2")}>Sobre Mí</Item>
-          <Item onClick={() => scrollToSection("section3")}>Conocimientos</Item>
-          <Item onClick={() => scrollToSection("section4")}>Proyectos</Item>
-          <Item onClick={() => scrollToSection("section5")}>Contacto</Item>
+          {navItems.map((item, index) => (
+            <Item key={index} onClick={() => scrollToSection(item.sectionId)}>
+              {item.label}
+            </Item>
+          ))}
         </Nav>
       </HeaderContainer>
 
@@ -61,46 +62,16 @@ const Header = () => {
         {isSidebarOpen && <Overlay onClick={CloseSidebar} />}
 
         <SidebarNav>
-          <SidebarItem
-            onClick={() => {
-              scrollToSection("section1");
-              CloseSidebar();
-            }}
-          >
-            Inicio
-          </SidebarItem>
-          <SidebarItem
-            onClick={() => {
-              scrollToSection("section2");
-              CloseSidebar();
-            }}
-          >
-            Sobre Mí
-          </SidebarItem>
-          <SidebarItem
-            onClick={() => {
-              scrollToSection("section3");
-              CloseSidebar();
-            }}
-          >
-            Conocimientos
-          </SidebarItem>
-          <SidebarItem
-            onClick={() => {
-              scrollToSection("section4");
-              CloseSidebar();
-            }}
-          >
-            Proyecto
-          </SidebarItem>
-          <SidebarItem
-            onClick={() => {
-              scrollToSection("section5");
-              CloseSidebar();
-            }}
-          >
-            Contacto
-          </SidebarItem>
+          {navItems.map((item, index) => (
+            <SidebarItem
+              onClick={() => {
+                scrollToSection(item.sectionId);
+                CloseSidebar();
+              }}
+            >
+              {item.label}
+            </SidebarItem>
+          ))}
         </SidebarNav>
       </SidebarContainer>
     </>

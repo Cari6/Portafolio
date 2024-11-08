@@ -35,7 +35,7 @@ export const projectsData = [
     languageIcons: [
       "/skills/html.png",
       "/skills/css.png",
-      "/logo192.png",
+      "/skills/react.png",
       "/skills/typescript.png",
       "/skills/styled-components.png",
     ],

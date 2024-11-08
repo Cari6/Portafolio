@@ -1,8 +1,15 @@
+interface SkillGroup {
+  skills: { text: string; icon: string }[];
+  variant: SkillVariant;
+}
+
+type SkillVariant = "default" | "alternative";
+
 export const LenguageSkills = [
   { text: "HTML", icon: "/skills/html.png" },
   { text: "CSS", icon: "/skills/css.png" },
   { text: "JavaScript", icon: "/skills/javascript.png" },
-  { text: "ReactJs", icon: "logo192.png" },
+  { text: "ReactJs", icon: "/skills/react.png" },
   { text: "NextJs", icon: "/skills/nextjs.png" },
   { text: "TypeScript", icon: "/skills/typescript.png" },
 ];
@@ -18,4 +25,10 @@ export const OtherSkills = [
   { text: "GitHub", icon: "/skills/github.png" },
   { text: "Scrum", icon: "/skills/scrum.png" },
   { text: "Jira", icon: "/skills/jira.png" },
+];
+
+export const skillsGroups: SkillGroup[] = [
+  { skills: LenguageSkills, variant: "default" },
+  { skills: ToolSkills, variant: "alternative" },
+  { skills: OtherSkills, variant: "default" },
 ];

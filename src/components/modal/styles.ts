@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Typography from "../typography";
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -114,6 +115,10 @@ export const CarouselButton = styled.button`
     opacity: 0.5;
     cursor: none;
   }
+`;
+
+export const ProjectTitle = styled(Typography)`
+  color: #000;
 `;
 
 export const ProjectInfo = styled.div`
