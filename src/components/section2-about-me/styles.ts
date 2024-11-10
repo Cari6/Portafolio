@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Typography from "../typography";
+
 export const SectionContainer = styled.div`
   height: 100%;
   min-height: 640px;
@@ -18,5 +20,10 @@ export const AboutMeText = styled.div`
   flex-grow: 1;
   @media (max-width: 880px) {
     flex-direction: column;
+  }
+  .text {
+    line-height: 1.8;
+    max-width: 1000px;
+    text-align: center;
   }
 `;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Typography from "../typography";
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -117,22 +116,29 @@ export const CarouselButton = styled.button`
   }
 `;
 
-export const ProjectTitle = styled(Typography)`
-  color: #000;
-`;
-
 export const ProjectInfo = styled.div`
   flex: 1;
   padding: 20px;
   gap: 20px;
   display: flex;
   flex-direction: column;
+
+  .project-title {
+    color: #000;
+  }
 `;
 export const LanguageIconContainer = styled.div`
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 `;
+
+export const ProjectDescriptionContainer = styled.div`
+  .project-description {
+    color: #2a2a38;
+  }
+`;
+
 export const LanguageIcon = styled.div`
   border-radius: 50%;
   width: 45px;

@@ -8,7 +8,7 @@ interface ProjectProps {
   title: string;
 }
 
-const Project = ({ image, title }: ProjectProps) => {
+const ProjectCard = ({ image, title }: ProjectProps) => {
   const { isTooltipVisible, showTooltip, hideTooltip } = useTooltip();
 
   const tooltipId = "project-tooltip";
@@ -22,7 +22,7 @@ const Project = ({ image, title }: ProjectProps) => {
         <img src={image} width={300} height={180} alt="" />
       </Image>
       <Title>
-        <Typography variant="description" style={{ color: "#fff" }}>
+        <Typography variant="description" className="title">
           {title}
         </Typography>
       </Title>
@@ -36,4 +36,4 @@ const Project = ({ image, title }: ProjectProps) => {
   );
 };
 
-export default Project;
+export default ProjectCard;

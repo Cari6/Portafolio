@@ -10,14 +10,7 @@ const AboutMeSection = ({ id }: AboutMeSectionProps) => {
     <SectionContainer id={id}>
       <Typography variant="h2">Sobre Mí</Typography>
       <AboutMeText>
-        <Typography
-          variant="description"
-          style={{
-            lineHeight: 1.8,
-            maxWidth: "1000px",
-            textAlign: "center",
-          }}
-        >
+        <Typography variant="description" className="text">
           Después de años trabajando en el área de salud, ventas y atención al
           público, descubrí mi pasión por la programación.
           <br />

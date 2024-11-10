@@ -1,5 +1,4 @@
-import Typography from "../typography";
-import { Icon, SkillsContainer } from "./styles";
+import { Icon, SkillsContainer, StyledTypography } from "./styles";
 
 interface SkillsProps {
   text: string;
@@ -10,15 +9,13 @@ interface SkillsProps {
 const Skills = ({ text, icon, $variant = "default" }: SkillsProps) => {
   return (
     <SkillsContainer>
-      <Typography
+      <StyledTypography
         variant="title2"
-        style={{
-          color: $variant === "default" ? "#fff" : "#CCB86C",
-          textAlign: "center",
-        }}
+        className={$variant === "default" ? "default" : "alternative"}
       >
         {text}
-      </Typography>
+      </StyledTypography>
+
       <Icon>
         <img src={icon} alt="" width={30} height={30} />
       </Icon>

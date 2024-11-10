@@ -29,4 +29,8 @@ export const Title = styled.div`
   display: flex;
   align-items: center;
   padding: 0 10px;
+
+  .title {
+    color: #fff;
+  }
 `;

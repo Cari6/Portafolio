@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { projectsData } from "../../utils/constants/projects";
 import Modal from "../modal";
-import Project from "../project";
+import Project from "../project-card";
 import Typography from "../typography";
 import { ProjectsContainer, SectionContainer } from "./styles";
 

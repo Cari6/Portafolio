@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Typography from "../typography";
 
 export const SectionContainer = styled.div`
   height: 640px;
@@ -24,6 +25,7 @@ export const HomeText = styled.div`
     width: 100%;
   }
 `;
+
 export const Photo = styled.div`
   width: 200px;
   height: 200px;

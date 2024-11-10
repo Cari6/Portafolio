@@ -12,8 +12,8 @@ import {
   LinkIcon,
   LinkIconContainer,
   ModalOverlay,
+  ProjectDescriptionContainer,
   ProjectInfo,
-  ProjectTitle,
 } from "./styles";
 
 interface ModalProps {
@@ -76,7 +76,9 @@ const Modal = ({ isOpen, onClose, project }: ModalProps) => {
         </CarouselContainer>
 
         <ProjectInfo>
-          <ProjectTitle>{project.title}</ProjectTitle>
+          <Typography variant="title1" className="project-title">
+            {project.title}
+          </Typography>
 
           <LanguageIconContainer>
             {project.languageIcons.map((icon, index) => (
@@ -85,10 +87,11 @@ const Modal = ({ isOpen, onClose, project }: ModalProps) => {
               </LanguageIcon>
             ))}
           </LanguageIconContainer>
-
-          <Typography variant="description" style={{ color: "#2a2a38" }}>
-            {project.description}
-          </Typography>
+          <ProjectDescriptionContainer>
+            <Typography variant="description" className="project-description">
+              {project.description}
+            </Typography>
+          </ProjectDescriptionContainer>
 
           <LinkIconContainer>
             {project.links?.map((link, index) => (

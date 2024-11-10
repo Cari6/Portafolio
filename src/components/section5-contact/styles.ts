@@ -23,6 +23,15 @@ export const ContactContainer = styled.div`
   }
 `;
 
+export const ContactLinks = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
+export const LinkIconContainer = styled.div`
+  position: relative;
+`;
+
 export const LinkIcon = styled.a`
   position: relative;
   background-color: #fff;

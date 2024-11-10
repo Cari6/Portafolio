@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Typography from "../typography";
 
 export const SkillsContainer = styled.div`
   background-color: #2a2a38;
@@ -20,4 +21,16 @@ export const Icon = styled.div`
   border-radius: 9px;
   width: 40px;
   height: 40px;
+`;
+
+export const StyledTypography = styled(Typography)`
+  text-align: center;
+
+  &.default {
+    color: #fff;
+  }
+
+  &.alternative {
+    color: #ccb86c;
+  }
 `;

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import {
   ContactContainer,
+  ContactLinks,
   CopiedText,
   CopyButton,
   EmailContainer,
   EmailLink,
   LinkIcon,
+  LinkIconContainer,
   Section5,
 } from "./styles";
 import Typography from "../typography";
@@ -60,9 +62,9 @@ const ContactSection = ({ id }: ContactSectionProps) => {
             <Tooltip text="Copiar" $visible={isTooltipVisible["copy-button"]} />
           </CopyButton>
         </EmailContainer>
-        <div style={{ display: "flex", gap: "20px" }}>
+        <ContactLinks>
           {contactInfo.map(({ href, src, alt, id }) => (
-            <div key={id} style={{ position: "relative" }}>
+            <LinkIconContainer key={id}>
               <LinkIcon
                 href={href}
                 target="_blank"
@@ -72,9 +74,9 @@ const ContactSection = ({ id }: ContactSectionProps) => {
                 <img src={src} alt={alt} width={25} height={25} />
               </LinkIcon>
               <Tooltip text={`Ir a ${alt}`} $visible={isTooltipVisible[id]} />
-            </div>
+            </LinkIconContainer>
           ))}
-        </div>
+        </ContactLinks>
       </ContactContainer>
     </Section5>
   );

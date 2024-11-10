@@ -50,12 +50,8 @@ const HomeSection = ({ id }: HomeSectionProps) => {
         <img src="profile-photo.png" alt="" />
       </Photo>
       <HomeText>
-        <Typography variant="h1" style={{ textAlign: "center" }}>
-          Carolina Sandoval
-        </Typography>
-        <Typography variant="title1" style={{ textAlign: "center" }}>
-          Frontend Web Developer{" "}
-        </Typography>
+        <Typography variant="h1">Carolina Sandoval</Typography>
+        <Typography variant="title1">Frontend Web Developer </Typography>
         <EmailContainer>
           <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
           <CopyButton
