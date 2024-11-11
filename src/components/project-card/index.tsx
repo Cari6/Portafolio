@@ -1,6 +1,6 @@
 import Tooltip from "../tooltip";
 import Typography from "../typography";
-import { Container, Title, Image } from "./styles";
+import { Container, ImageContainer, TitleContainer } from "./styles";
 import useTooltip from "../../hooks/useTooltip";
 
 interface ProjectProps {
@@ -18,14 +18,14 @@ const ProjectCard = ({ image, title }: ProjectProps) => {
   const handleMouseLeave = () => hideTooltip(tooltipId);
   return (
     <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <Image>
+      <ImageContainer>
         <img src={image} width={300} height={180} alt="" />
-      </Image>
-      <Title>
+      </ImageContainer>
+      <TitleContainer>
         <Typography variant="description" className="title">
           {title}
         </Typography>
-      </Title>
+      </TitleContainer>
       <Tooltip
         text="Ver más"
         $visible={isTooltipVisible[tooltipId]}

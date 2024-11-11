@@ -60,7 +60,7 @@ export const SidebarContainer = styled.div<{ $isOpen: boolean }>`
   bottom: 0;
   left: ${(props) => (props.$isOpen ? "0" : "-250px")};
   transition: left 0.3s ease-in-out;
-  z-index: 1002;
+  z-index: 4;
 `;
 export const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
@@ -69,7 +69,7 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1;
 `;
 export const SidebarNav = styled.nav`
   background-color: #16161d;
@@ -81,7 +81,7 @@ export const SidebarNav = styled.nav`
   position: fixed;
   top: 0;
   bottom: 0;
-  z-index: 1000;
+  z-index: 2;
 `;
 export const SidebarItem = styled.div`
   color: #9a9acb;

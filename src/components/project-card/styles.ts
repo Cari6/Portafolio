@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Image = styled.div`
+export const ImageContainer = styled.div`
   height: 160px;
 
   img {
@@ -24,7 +24,7 @@ export const Image = styled.div`
     border-radius: 9px 9px 0 0;
   }
 `;
-export const Title = styled.div`
+export const TitleContainer = styled.div`
   height: 40px;
   display: flex;
   align-items: center;

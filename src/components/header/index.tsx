@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   HeaderContainer,
   Item,
@@ -9,20 +8,11 @@ import {
   SidebarItem,
   SidebarNav,
 } from "./styles";
-import { navItems } from "../../utils/constants/constants";
+import { headerHeight, navItems } from "../../utils/constants/constants";
+import useToggle from "../../hooks/useToggle";
 
 const Header = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const headerHeight = 71;
-
-  const OpenSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const CloseSidebar = () => {
-    setIsSidebarOpen(false);
-  };
+  const { isSidebarOpen, OpenSidebar, CloseSidebar } = useToggle();
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -33,15 +23,6 @@ const Header = () => {
       });
     }
   };
-
-  useEffect(() => {
-    if (isSidebarOpen) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-    return () => document.body.classList.remove("no-scroll");
-  }, [isSidebarOpen]);
 
   return (
     <>
@@ -64,6 +45,7 @@ const Header = () => {
         <SidebarNav>
           {navItems.map((item, index) => (
             <SidebarItem
+              key={index}
               onClick={() => {
                 scrollToSection(item.sectionId);
                 CloseSidebar();

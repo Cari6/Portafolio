@@ -10,3 +10,4 @@ export { default as Tooltip } from "./tooltip";
 export { default as Skills } from "./skills";
 export { default as ProjectCard } from "./project-card";
 export { default as Modal } from "./modal";
+export { default as CopyButton } from "./copy-button";

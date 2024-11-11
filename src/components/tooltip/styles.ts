@@ -20,4 +20,8 @@ export const TooltipContainer = styled.div<TooltipContainerProps>`
   transform: translateX(-50%);
   opacity: ${(props) => (props.$visible ? 1 : 0)};
   transition: opacity 0.2s ease-in-out;
+
+  .text {
+    white-space: nowrap;
+  }
 `;

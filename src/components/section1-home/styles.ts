@@ -24,9 +24,17 @@ export const HomeText = styled.div`
   @media (max-width: 450px) {
     width: 100%;
   }
+
+  .name {
+    text-align: center;
+  }
+
+  .job-title {
+    text-align: center;
+  }
 `;
 
-export const Photo = styled.div`
+export const PhotoContainer = styled.div`
   width: 200px;
   height: 200px;
 
@@ -60,20 +68,4 @@ export const EmailLink = styled.a`
   &:hover {
     color: #ccb86c;
   }
-`;
-
-export const CopyButton = styled.button`
-  background-color: #2a2a38;
-  border: none;
-  border-radius: 9px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  position: relative;
-`;
-
-export const CopiedText = styled.span`
-  color: #ccb86c;
-  font-family: "montserrat";
 `;

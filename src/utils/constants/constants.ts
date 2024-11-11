@@ -1,3 +1,5 @@
+export const headerHeight = 71;
+
 export const navItems = [
   { label: "Inicio", sectionId: "section1" },
   { label: "Sobre Mí", sectionId: "section2" },

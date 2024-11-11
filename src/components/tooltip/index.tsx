@@ -20,7 +20,7 @@ const Tooltip = ({
       $backgroundColor={$backgroundColor}
       $bottom={$bottom}
     >
-      <Typography variant="description" style={{ whiteSpace: "nowrap" }}>
+      <Typography variant="description" className="text">
         {text}
       </Typography>
     </TooltipContainer>

@@ -1,4 +1,4 @@
-import { Icon, SkillsContainer, StyledTypography } from "./styles";
+import { IconContainer, SkillsContainer, StyledTypography } from "./styles";
 
 interface SkillsProps {
   text: string;
@@ -16,9 +16,9 @@ const Skills = ({ text, icon, $variant = "default" }: SkillsProps) => {
         {text}
       </StyledTypography>
 
-      <Icon>
+      <IconContainer>
         <img src={icon} alt="" width={30} height={30} />
-      </Icon>
+      </IconContainer>
     </SkillsContainer>
   );
 };

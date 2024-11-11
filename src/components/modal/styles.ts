@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ModalOverlay = styled.div`
   position: fixed;
-  z-index: 1001;
+  z-index: 3;
   top: 0;
   left: 0;
   bottom: 0;
@@ -57,7 +57,7 @@ export const CloseButton = styled.button`
   background-color: #fff;
   border: none;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 2;
   display: flex;
   border-radius: 50%;
   padding: 6px;

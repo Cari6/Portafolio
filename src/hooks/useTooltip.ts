@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface TooltipVisibility {
   [key: string]: boolean;
@@ -6,6 +6,9 @@ interface TooltipVisibility {
 
 const useTooltip = () => {
   const [isTooltipVisible, setTooltipVisible] = useState<TooltipVisibility>({});
+  const [isTooltipEnabled, setIsTooltipEnabled] = useState(
+    window.innerWidth >= 450
+  );
 
   const showTooltip = (id: string) => {
     setTooltipVisible((prev) => ({ ...prev, [id]: true }));
@@ -15,7 +18,21 @@ const useTooltip = () => {
     setTooltipVisible((prev) => ({ ...prev, [id]: false }));
   };
 
-  return { isTooltipVisible, showTooltip, hideTooltip };
+  const handleResize = () => {
+    setIsTooltipEnabled(window.innerWidth >= 450);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return {
+    isTooltipVisible,
+    showTooltip,
+    hideTooltip,
+    isTooltipEnabled,
+  };
 };
 
 export default useTooltip;

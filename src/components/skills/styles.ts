@@ -13,7 +13,7 @@ export const SkillsContainer = styled.div`
   height: 115px;
 `;
 
-export const Icon = styled.div`
+export const IconContainer = styled.div`
   background-color: #fff;
   display: flex;
   justify-content: center;
