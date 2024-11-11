@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Typography from "../typography";
 
 export const SectionContainer = styled.div`
   height: 100%;
