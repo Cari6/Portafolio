@@ -11,6 +11,7 @@ export const LenguageSkills = [
   { text: "JavaScript", icon: "/skills/javascript.png" },
   { text: "ReactJs", icon: "/skills/react.png" },
   { text: "NextJs", icon: "/skills/nextjs.png" },
+  { text: "React Native", icon: "/skills/react.png" },
   { text: "TypeScript", icon: "/skills/typescript.png" },
 ];
 

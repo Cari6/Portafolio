@@ -23,7 +23,7 @@ const AboutMeSection = ({ id }: AboutMeSectionProps) => {
           <br />
           Estoy ansiosa de unirme a un equipo de desarrollo donde pueda seguir
           aprendiendo, contribuir con soluciones técnicas mientras crezco como
-          desarrolladora y ganar experiencia haciendo lo que me gusta. <br />
+          desarrolladora y ganar experiencia haciendo lo que me gusta.
         </Typography>
       </AboutMeText>
     </SectionContainer>
